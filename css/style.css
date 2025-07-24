@@ -1,0 +1,389 @@
+/* Reset some defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* Navigation bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    transition: color 0.2s ease;
+}
+
+.nav-links li a:hover {
+    color: #e8f0fe;
+}
+
+/* Hero section */
+.hero {
+    background: url('../images/background_1.png') no-repeat center center/cover;
+    color: #ffffff;
+    text-align: center;
+    padding: 4.5rem 0 3.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5); /* Dark overlay for text readability */
+}
+
+.hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.btn {
+    background-color: #ffffff;
+    color: #1a73e8;
+    padding: 0.6rem 1.4rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #e8f0fe;
+    color: #0b5394;
+}
+
+/* Section styling */
+.section {
+    padding: 3rem 0;
+}
+
+.section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #1a73e8;
+    text-align: center;
+}
+
+/* Tracks section with space/rocket background */
+.tracks {
+    background: url('../images/background_2.png') no-repeat center center/cover;
+    position: relative;
+    color: #ffffff;
+}
+
+.tracks::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.tracks .container {
+    position: relative;
+    z-index: 2;
+}
+
+.tracks h2 {
+    color: #ffffff;
+}
+
+/* Speakers section with network/control background */
+.speakers {
+    background: url('../images/background_3.png') no-repeat center center/cover;
+    position: relative;
+}
+
+.speakers::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 1;
+}
+
+.speakers .container {
+    position: relative;
+    z-index: 2;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Tracks */
+.track-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.track {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+    color: #ffffff;
+}
+
+.track:hover {
+    transform: translateY(-4px);
+}
+
+.track-icon {
+    color: #1a73e8;
+    margin-bottom: 0.75rem;
+}
+
+.track h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.track p {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: #e0e0e0;
+}
+
+.track ul {
+    padding-left: 1.2rem;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #e0e0e0;
+}
+
+.track ul li {
+    margin-bottom: 0.4rem;
+    list-style: disc;
+    color: #e0e0e0;
+}
+
+/* Schedule tables */
+.schedule .session {
+    margin-bottom: 2rem;
+}
+
+.schedule .session h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+.schedule table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+}
+
+.schedule th, .schedule td {
+    padding: 0.7rem;
+    border: 1px solid #e0e0e0;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.schedule th {
+    background-color: #1a73e8;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.schedule tbody tr:nth-child(even) {
+    background-color: #f7f9fc;
+}
+
+/* Speaker and organizer grids */
+.speaker-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+
+
+.speaker-photo {
+    display: block;
+    margin: 0 auto 0.5em auto;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.speaker, .organizer {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.speaker:hover, .organizer:hover {
+    transform: translateY(-4px);
+}
+
+.speaker h3, .organizer h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+    color: #1a73e8;
+}
+
+.speaker p, .organizer p {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+}
+
+.speaker p strong, .organizer p strong {
+    font-weight: 600;
+}
+
+.subtext {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+/* Outreach */
+.outreach p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+/* Footer */
+.footer {
+    background-color: #1a73e8;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.footer p {
+    font-size: 0.85rem;
+}
+
+.organizer-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    overflow-x: auto; /* Enable horizontal scrolling if content overflows */
+    padding-bottom: 1rem; /* Add some padding for scrollbar */
+}
+
+
+
+/* Dropdown functionality for speaker abstracts */
+.speaker-row {
+    position: relative;
+}
+
+.speaker-row.has-abstract {
+    cursor: pointer;
+}
+
+.speaker-row.has-abstract:hover {
+    background-color: #f0f8ff;
+}
+
+.dropdown-icon {
+    display: inline-block;
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+    color: #1a73e8;
+}
+
+.speaker-row.expanded .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.abstract-content {
+    display: none;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-left: 3px solid #1a73e8;
+    margin-top: 0.5rem;
+    border-radius: 0 4px 4px 0;
+    font-style: italic;
+    color: #555;
+    line-height: 1.5;
+}
+
+.speaker-row.expanded .abstract-content {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+    }
+    to {
+        opacity: 1;
+        max-height: 200px;
+    }
+}
+
+.lightning-round {
+    background-color: #fff3cd;
+    border-left: 3px solid #ffc107;
+}
+
+.lightning-round .abstract-content {
+    background-color: #fff8e1;
+    border-left-color: #ffc107;
+}
+

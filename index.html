@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDC 2025 Workshop – Stochastic Planning &amp; Control of Dynamical Systems</title>
+    <!-- Load Google Fonts for a modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <!-- Font‑Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p6ExsYoeD4K2iHzOA5JUJE0G2i5Dm3S5imQh0zqyj4pjBcj2OJzv9KK2VTIh5K6kY+zYUxETCk4cEzGMLr02Cw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- Hero section with workshop title and call to action -->
+    <header class="hero">
+        <nav class="navbar">
+            <div class="logo">CDC 2025 Workshop</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#tracks">Tracks</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#speakers">Speakers</a></li>
+                <li><a href="#organizers">Organizers</a></li>
+                <li><a href="#outreach">Outreach</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <h1>Stochastic Planning &amp; Control of Dynamical Systems</h1>
+            <p>Bridging Theory and Applications</p>
+            <a href="#schedule" class="btn">View Schedule</a>
+        </div>
+    </header>
+
+    <!-- About the workshop -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2>About the Workshop</h2>
+            <p>
+                Recent advances in stochastic control theory have opened new avenues for addressing uncertainty in
+                complex dynamical systems.  This full‑day workshop brings together leading, early‑career and
+                student researchers from the communities of stochastic control, uncertainty quantification and
+                optimization to explore cutting‑edge methodologies for planning and controlling systems under
+                uncertainty.  By highlighting connections between these disciplines, we aim to develop practical
+                algorithms that can handle the challenges of real‑world applications, particularly in aerospace
+                and autonomous systems.
+            </p>
+            <p>
+                Throughout the day, attendees will be exposed to a suite of different approaches and methodologies
+                designed to enable safe and robust trajectory planning and control in uncertain environments.
+                Speakers will showcase theory and implementations, and the organizers will consolidate the material
+                in a companion <em>open source Python package</em> so that ideas presented at the workshop are easy
+                to adopt and extend.
+            </p>
+        </div>
+    </section>
+
+    <!-- Track descriptions -->
+    <section id="tracks" class="section tracks">
+        <div class="container">
+            <h2>Workshop Tracks</h2>
+            <div class="track-grid">
+                <!-- Track 1 -->
+                <div class="track">
+                    <i class="fas fa-braille track-icon" aria-hidden="true"></i>
+                    <h3>Stochastic MPC &amp; Data‑Driven Control</h3>
+                    <p>Control methods that explicitly incorporate constraints and risk‑aware planning into
+                        trajectory optimisation.</p>
+                    <ul>
+                        <li><strong>Stochastic Predictive Control:</strong> planning in a receding horizon framework where
+                            the objective and constraints are formulated probabilistically, ensuring stability and
+                            feasibility under uncertainty via convex and stochastic optimisation.</li>
+                        <li><strong>Data‑Driven &amp; Distributionally Robust Control:</strong> synthesising control laws
+                            directly from noisy data and exploiting trajectory data to represent systems without
+                            explicit identification.  Distributional robustness protects against ambiguity in the
+                            underlying data.</li>
+                    </ul>
+                </div>
+                <!-- Track 2 -->
+                <div class="track">
+                    <i class="fas fa-wave-square track-icon" aria-hidden="true"></i>
+                    <h3>Control of Distributions</h3>
+                    <p>Techniques aimed at steering probability distributions and handling model uncertainty via
+                        distributional methods.</p>
+                    <ul>
+                        <li><strong>Optimal Transport:</strong> tools for quantifying distances between probability measures
+                            and designing controllers that steer systems between distributions or are robust to
+                            uncertainty in the underlying measures.</li>
+                        <li><strong>Density Steering:</strong> shaping the full state distribution (not just the mean),
+                            encompassing covariance steering and connections to Schrödinger bridges and optimal
+                            transport.</li>
+                    </ul>
+                </div>
+                <!-- Track 3 -->
+                <div class="track">
+                    <i class="fas fa-shield-alt track-icon" aria-hidden="true"></i>
+                    <h3>Stochastic Safety &amp; Probabilistic Guarantees</h3>
+                    <p>Methods for ensuring system safety via safety filters and optimal control, and verifying
+                        reachability under stochastic disturbances.</p>
+                    <ul>
+                        <li><strong>Stochastic Reachability:</strong> computing the probability that a stochastic system
+                            reaches or avoids particular sets using dynamic programming or Hamilton–Jacobi–Bellman
+                            equations, with applications to control and safety filters.</li>
+                        <li><strong>Stochastic Control Barrier Functions:</strong> extending deterministic barrier
+                            functions to guarantee safety with high probability by ensuring safe sets remain forward
+                            invariant under stochastic dynamics.</li>
+                    </ul>
+                </div>
+                <!-- Track 4 -->
+                <div class="track">
+                    <i class="fas fa-rocket track-icon" aria-hidden="true"></i>
+                    <h3>Applications in Aerospace</h3>
+                    <p>Implementation and validation of theoretical methods in complex, uncertain environments.
+                    </p>
+                    <ul>
+                        <li><strong>Aerospace Applications:</strong> showcasing algorithms that combine theory and
+                            practice on real‑world problems such as low‑thrust cislunar and interplanetary
+                            guidance and turbulence‑affected quadrotor trajectory optimisation.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule -->
+    <section id="schedule" class="section schedule">
+        <div class="container">
+            <h2>Tentative Schedule</h2>
+            <!-- Morning Session I -->
+            <div class="session">
+                <h3>Morning Session I – Stochastic MPC &amp; Data‑Driven Control</h3>
+                <table>
+                    <thead>
+                        <tr><th>Time</th><th>Event</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>08:30 – 08:40</td><td>Opening remarks</td></tr>
+                        <tr class="speaker-row has-abstract" onclick="toggleAbstract(this)">
+                            <td>08:40 – 09:15</td>
+                            <td>Francesco Borrelli (UC Berkeley) – <em>Stochastic Model Predictive Control</em> <i class="fas fa-chevron-down dropdown-icon"></i>
+                                <div class="abstract-content">
+                                    <strong>Abstract:</strong> Stay tuned...
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="speaker-row has-abstract" onclick="toggleAbstract(this)">
+                            <td>09:15 – 09:50</td>
+                            <td>Florian Dörfler (ETH Zürich) – <em>Gaussian Behaviours: Representations &amp; Data‑Driven Control</em> <i class="fas fa-chevron-down dropdown-icon"></i>
+                                <div class="abstract-content">
+                                    <strong>Abstract:</strong> Stay tuned...
+                                </div>
+                            </td>
+                        </tr>
+                        <tr><td>10:00 – 10:30</td><td>Coffee break</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Morning Session II -->
+            <div class="session">
+                <h3>Morning Session II – Distributional Control</h3>
+                <table>
+                    <thead>
+                        <tr><th>Time</th><th>Event</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr class="speaker-row has-abstract" onclick="toggleAbstract(this)">
+                            <td>10:30 – 11:05</td>
+                            <td>Tryphon T. Georgiou (UC Irvine) – <em>Optimal Transport &amp; Schrödinger Bridges</em> <i class="fas fa-chevron-down dropdown-icon"></i>
+                                <div class="abstract-content">
+                                    <strong>Abstract:</strong> Stay tuned...
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="speaker-row has-abstract" onclick="toggleAbstract(this)">
+                            <td>11:05 – 11:40</td>
+                            <td>Panagiotis Tsiotras (Georgia Tech) – <em>Distribution Steering for Stochastic Systems</em> <i class="fas fa-chevron-down dropdown-icon"></i>
+                                <div class="abstract-content">
+                                    <strong>Abstract:</strong> Stay tuned...
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="speaker-row has-abstract" onclick="toggleAbstract(this)">
+                            <td>11:40 – 12:15</td>
+                            <td>Giancarlo Ferrari‑Trecate (EPFL) – <em>Data‑Driven Distributionally Robust LQ Control</em> <i class="fas fa-chevron-down dropdown-icon"></i>
+                                <div class="abstract-content">
+                                    <strong>Abstract:</strong> Stay tuned...
+                                </div>
+                            </td>
+                        </tr>
+                        <tr><td>12:15 – 14:00</td><td>Lunch break</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Afternoon Session I -->
+            <div class="session">
+                <h3>Afternoon Session I – Stochastic Safety &amp; Probabilistic Guarantees</h3>
+                <table>
+                    <thead>
+                        <tr><th>Time</th><th>Event</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr class="speaker-row has-abstract" onclick="toggleAbstract(this)">
+                            <td>14:00 – 14:35</td>
+                            <td>Alessandro Abate (Oxford University) – <em>Stochastic Reachability &amp; Barriers</em> <i class="fas fa-chevron-down dropdown-icon"></i>
+                                <div class="abstract-content">
+                                    <strong>Abstract:</strong> Stay tuned...
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="speaker-row has-abstract" onclick="toggleAbstract(this)">
+                            <td>14:35 – 15:10</td>
+                            <td>Yongxin Chen (Georgia Tech) – <em>Probabilistic Reachability of Nonlinear Stochastic Systems</em> <i class="fas fa-chevron-down dropdown-icon"></i>
+                                <div class="abstract-content">
+                                    <strong>Abstract:</strong> Stay tuned...
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="speaker-row has-abstract lightning-round" onclick="toggleAbstract(this)">
+                            <td>15:10 – 15:30</td>
+                            <td>Lightning round 1 (PhD/post‑doc presentations) <i class="fas fa-chevron-down dropdown-icon"></i>
+                                <div class="abstract-content">
+                                    <strong>Lightning Talks Include:</strong><br>
+                                    • "title" - PhD Student, [school]<br>
+                                    • "title" - Postdoc, [school]<br>
+                                    • "title" - PhD Student, [school]<br>
+                                    • "title" - PhD Student, [school]<br>
+                                    <em>Each presentation is 5 minutes with 1 minute for questions.</em>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr><td>15:30 – 16:00</td><td>Coffee break</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Afternoon Session II -->
+            <div class="session">
+                <h3>Afternoon Session II – Applications in Aerospace</h3>
+                <table>
+                    <thead>
+                        <tr><th>Time</th><th>Event</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr class="speaker-row has-abstract" onclick="toggleAbstract(this)">
+                            <td>16:00 – 16:35</td>
+                            <td>Behçet Açıkmeşe (University of Washington) – <em>Successive Convex Programming for Safe &amp; Robust Guidance</em> <i class="fas fa-chevron-down dropdown-icon"></i>
+                                <div class="abstract-content">
+                                    <strong>Abstract:</strong> Stay tuned...
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="speaker-row has-abstract" onclick="toggleAbstract(this)">
+                            <td>16:35 – 17:10</td>
+                            <td>Kenshiro Oguri (Purdue University) – <em>Stochastic Optimal Control for Space Applications</em> <i class="fas fa-chevron-down dropdown-icon"></i>
+                                <div class="abstract-content">
+                                    <strong>Abstract:</strong> Stay tuned...
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="speaker-row has-abstract lightning-round" onclick="toggleAbstract(this)">
+                            <td>17:10 – 17:20</td>
+                            <td>Lightning round 2 (PhD/post‑doc presentations) <i class="fas fa-chevron-down dropdown-icon"></i>
+                                <div class="abstract-content">
+                                    <strong>Lightning Talks Include:</strong><br>
+                                    • "title" - PhD Student, [school]<br>
+                                    • "title" - Postdoc, [school]<br>
+                                    <em>Each presentation is 5 minutes with 1 minute for questions.</em>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr><td>17:20 – 17:30</td><td>Closing remarks</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers -->
+    <section id="speakers" class="section speakers">
+        <div class="container">
+            <h2>Invited Speakers</h2>
+            <p class="subtext">Our speakers are leaders in stochastic control, optimization, learning, and aerospace applications.</p>
+            <div class="speaker-grid">
+                <!-- Speaker: Borrelli -->
+                <div class="speaker">
+                    <img src="images/francesco_headshot.png" alt="Francesco Borrelli" class="speaker-photo">
+                    <h3>Francesco Borrelli</h3>
+                    <p><strong>University of California, Berkeley</strong></p>
+                    <p><a href="https://sites.google.com/berkeley.edu/mpc-lab" target="_blank" rel="noopener">MPC Lab</a></p>
+                </div>
+                <!-- Speaker: Dörfler -->
+                <div class="speaker">
+                    <img src="images/florian_headshot.png" alt="Florian Dörfler" class="speaker-photo">
+                    <h3>Florian Dörfler</h3>
+                    <p><strong>ETH Zürich</strong></p>
+                    <p><a href="https://control.ee.ethz.ch/" target="_blank" rel="noopener">Automatic Control Lab</a></p>
+                </div>
+                <!-- Speaker: Georgiou -->
+                <div class="speaker">
+                    <img src="images/tryphon_headshot.png" alt="Tryphon T. Georgiou" class="speaker-photo">
+                    <h3>Tryphon T. Georgiou</h3>
+                    <p><strong>University of California, Irvine</strong></p>
+                    <p><a href="https://georgiou.eng.uci.edu" target="_blank" rel="noopener">Homepage</a></p>
+                </div>
+                <!-- Speaker: Tsiotras -->
+                <div class="speaker">
+                    <img src="images/panos_headshot.png" alt="Panagiotis Tsiotras" class="speaker-photo">
+                    <h3>Panagiotis Tsiotras</h3>
+                    <p><strong>Georgia Institute of Technology</strong></p>
+                    <p><a href="https://dcsl.gatech.edu/tsiotras.html" target="_blank" rel="noopener">Dynamics &amp; Control Systems Lab (DCSL)</a></p>
+                </div>
+                <!-- Speaker: Ferrari‑Trecate -->
+                <div class="speaker">
+                    <img src="images/gianni_headshot.png" alt="Giancarlo Ferrari-Trecate" class="speaker-photo">
+                    <h3>Giancarlo Ferrari-Trecate</h3>
+                    <p><strong>EPFL</strong></p>
+                    <p><a href="https://www.epfl.ch/labs/decode/" target="_blank" rel="noopener">Dependable Control and Decision Group (DECODE)</a></p>
+                </div>
+                <!-- Speaker: Abate -->
+                <div class="speaker">
+                    <img src="images/alessandro_headshot.png" alt="Alessandro Abate" class="speaker-photo">
+                    <h3>Alessandro Abate</h3>
+                    <p><strong>University of Oxford</strong></p>
+                    <p><a href="https://oxcav.web.ox.ac.uk/" target="_blank" rel="noopener">Control and Verification Group (OXCAV)</a></p>
+                </div>
+                <!-- Speaker: Chen -->
+                <div class="speaker">
+                    <img src="images/yongxin_headshot.png" alt="Yongxin Chen" class="speaker-photo">
+                    <h3>Yongxin Chen</h3>
+                    <p><strong>Georgia Institute of Technology</strong></p>
+                    <p><a href="https://flair.ae.gatech.edu/" target="_blank" rel="noopener">Foundations of Learning and Intelligent Robots (FLAIR) Lab</a></p>
+                </div>
+                <!-- Speaker: Açıkmeşe -->
+                <div class="speaker">
+                    <img src="images/behcet_headshot.png" alt="Behçet Açıkmeşe" class="speaker-photo">
+                    <h3>Behçet Açıkmeşe</h3>
+                    <p><strong>University of Washington</strong></p>
+                    <p><a href="https://uwacl.com" target="_blank" rel="noopener">Autonomous Controls Lab</a></p>
+                </div>
+                <!-- Speaker: Oguri -->
+                <div class="speaker">
+                    <img src="images/ken_headshot.png" alt="Kenshiro Oguri" class="speaker-photo">
+                    <h3>Kenshiro Oguri</h3>
+                    <p><strong>Purdue University</strong></p>
+                    <p><a href="https://engineering.purdue.edu/OguriGroup" target="_blank" rel="noopener">Oguri Research Group</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Organizers -->
+    <section id="organizers" class="section organizers">
+        <div class="container">
+            <h2>Organizers</h2>
+            <div class="organizer-grid">
+                <!-- Vignesh Sivaramakrishnan -->
+                <div class="organizer">
+                    <img src="images/vignesh_headshot.jpg" alt="Vignesh Sivaramakrishnan" class="speaker-photo">
+                    <h3>Vignesh Sivaramakrishnan</h3>
+                    <p><strong>Air Force Research Lab (AFRL)</strong></p>
+                </div>
+                <!-- Joshua Pilipovsky -->
+                <div class="organizer">
+                    <img src="images/josh_headshot.jpg" alt="Joshua Pilipovsky" class="speaker-photo">
+                    <h3>Joshua Pilipovsky</h3>
+                    <p><strong>Raytheon Technologies Research Center (RTRC)</strong></p>
+                </div>
+                <!-- Sean Phillips -->
+                <div class="organizer">
+                    <img src="images/sean_headshot.png" alt="Sean Phillips" class="speaker-photo">
+                    <h3>Sean Phillips</h3>
+                    <p><strong>Air Force Research Lab (AFRL)</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Outreach & Engagement -->
+    <section id="outreach" class="section outreach">
+        <div class="container">
+            <h2>Outreach &amp; Engagement</h2>
+            <p>
+                The workshop fosters dissemination of ideas between researchers from academia and industry across
+                North America and Europe.  Our objectives are twofold: to aid practitioners in realising tools
+                from academia, and to provide practical examples—particularly in aerospace—that motivate
+                fundamental research.
+            </p>
+            <p>
+                To enhance accessibility, the organisers are preparing an open-source Python package that
+                implements the approaches presented by the speakers.  We hope that this lowers the barrier to
+                entry for newcomers and encourages attendees to experiment directly with the techniques and
+                engage in deeper theoretical discussions.
+            </p>
+            <p>
+                The spotlight sessions are specifically designed to provide opportunities for Ph.D. students and
+                postdoctoral fellows to present their work, engage with experts and receive feedback.  We
+                believe that fostering interaction with new researchers will nurture the next generation of
+                experts in stochastic planning and control.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Stochastic Planning &amp; Control Workshop</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAbstract(row) {
+            // Toggle the expanded class
+            row.classList.toggle('expanded');
+            
+            // Find the abstract content within this row
+            const abstractContent = row.querySelector('.abstract-content');
+            
+            if (row.classList.contains('expanded')) {
+                abstractContent.style.display = 'block';
+            } else {
+                abstractContent.style.display = 'none';
+            }
+        }
+
+        // Close other abstracts when opening a new one (optional)
+        document.addEventListener('DOMContentLoaded', function() {
+            const speakerRows = document.querySelectorAll('.speaker-row.has-abstract');
+            
+            speakerRows.forEach(row => {
+                row.addEventListener('click', function() {
+                    // Close all other expanded rows in the same table
+                    const table = this.closest('table');
+                    const otherRows = table.querySelectorAll('.speaker-row.has-abstract.expanded');
+                    
+                    otherRows.forEach(otherRow => {
+                        if (otherRow !== this) {
+                            otherRow.classList.remove('expanded');
+                            otherRow.querySelector('.abstract-content').style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
